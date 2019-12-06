@@ -57,7 +57,7 @@ def main(args):
   # Estimator that utilizes these DistributionStrateges.
   # Evaluator is a single worker, so using MirroredStrategy.
   config = tf.estimator.RunConfig(
-      train_distribute=tf.distribute.CollectiveAllReduceStrategy(
+      train_distribute=tf.distribute.experimental.MultiWorkerMirroredStrategy(
           num_gpus_per_worker=0),
       eval_distribute=tf.distribute.MirroredStrategy(
           num_gpus_per_worker=0))
