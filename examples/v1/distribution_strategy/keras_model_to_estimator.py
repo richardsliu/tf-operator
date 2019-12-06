@@ -19,7 +19,6 @@ from __future__ import print_function
 
 import sys
 
-import logging
 import numpy as np
 import tensorflow as tf
 
@@ -49,7 +48,7 @@ def main(args):
   model.add(tf.keras.layers.Dense(1, activation='sigmoid'))
 
   # Compile the model.
-  optimizer = tf.train.GradientDescentOptimizer(0.2)
+  optimizer = tf.compat.v1.train.GradientDescentOptimizer(0.2)
   model.compile(loss='binary_crossentropy', optimizer=optimizer)
   model.summary()
   tf.keras.backend.set_learning_phase(True)
@@ -75,6 +74,5 @@ def main(args):
 
 
 if __name__ == '__main__':
-  logger = tf.get_logger()
-  logger.setLevel(logging.INFO)
-  tf.app.run(argv=sys.argv)
+  tf.compat.v1.logging.set_verbosity(tf.compat.v1.logging.INFO)
+  tf.compat.v1.app.run(argv=sys.argv)
