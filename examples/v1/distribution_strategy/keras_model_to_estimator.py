@@ -74,4 +74,4 @@ def main(args):
 
 if __name__ == '__main__':
   tf.compat.v1.logging.set_verbosity(tf.compat.v1.logging.INFO)
-  uf.compat.v1.app.run(argv=sys.argv)
+  tf.compat.v1.app.run(argv=sys.argv)
