@@ -76,5 +76,5 @@ def main(args):
 
 if __name__ == '__main__':
   logger = tf.get_logger()
-  logging.setLevel(logging.INFO)
+  logger.setLevel(logging.INFO)
   tf.app.run(argv=sys.argv)
