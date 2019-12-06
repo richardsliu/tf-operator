@@ -19,6 +19,7 @@ from __future__ import print_function
 
 import sys
 
+import logging
 import numpy as np
 import tensorflow as tf
 
@@ -74,5 +75,6 @@ def main(args):
 
 
 if __name__ == '__main__':
-  tf.logging.set_verbosity(tf.logging.INFO)
+  logger = tf.get_logger()
+  logging.setLevel(logging.INFO)
   tf.app.run(argv=sys.argv)
