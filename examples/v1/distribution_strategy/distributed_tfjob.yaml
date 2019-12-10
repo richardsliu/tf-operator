@@ -16,4 +16,4 @@ spec:
         spec:
           containers:
             - name: tensorflow
-              image: gcr.io/kubeflow-examples/distributed_worker:v20191205-942e5e91
+              image: gcr.io/kubeflow-examples/distributed_worker:v20191205-8da8c152
